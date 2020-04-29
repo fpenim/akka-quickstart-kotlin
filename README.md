@@ -15,3 +15,14 @@ Run this application with Maven:
 ```bash
 $ mvn compile exec:exec
 ```
+
+## Experiments
+
+Under `com.fpenim.experiments` you will find a number of experiments that aim to highlight the actor architecture. 
+Each one of them has its own main function and should be run individually. 
+
+These examples are based on the ones found in [this guide](https://doc.akka.io/docs/akka/current/typed/guide/tutorial_1.html).
+
+- `Hierarchy` - understand what the actor hierarchy looks like
+- `StartStop` - understand the actor life cycle
+- `Supervision` - understand the supervisor strategy
