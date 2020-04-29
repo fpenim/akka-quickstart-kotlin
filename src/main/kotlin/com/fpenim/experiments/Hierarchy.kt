@@ -10,14 +10,14 @@ import akka.actor.typed.javadsl.Receive
 import com.fpenim.utils.pressEnterToExit
 
 fun main() {
-    val hierarchyMain = ActorSystem.create(Main.create(), "imYourFather")
+    val hierarchyMain = ActorSystem.create(HierarchyMain.create(), "imYourFather")
     hierarchyMain.tell("start")
 
     pressEnterToExit(hierarchyMain)
 }
 
 
-class Main(context: ActorContext<String>) : AbstractBehavior<String>(context) {
+class HierarchyMain(context: ActorContext<String>) : AbstractBehavior<String>(context) {
 
     override fun createReceive(): Receive<String> =
             newReceiveBuilder().onMessageEquals("start", this::start).build()
@@ -30,7 +30,7 @@ class Main(context: ActorContext<String>) : AbstractBehavior<String>(context) {
     }
 
     companion object {
-        fun create(): Behavior<String> = Behaviors.setup(::Main)
+        fun create(): Behavior<String> = Behaviors.setup(::HierarchyMain)
     }
 }
 
