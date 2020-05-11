@@ -6,7 +6,6 @@ import akka.actor.typed.ActorRef
 import com.fpenim.greetings.Greeter
 import org.junit.ClassRule
 import org.junit.Test
-import kotlin.test.assertEquals
 
 class AkkaQuickstartTest {
 
